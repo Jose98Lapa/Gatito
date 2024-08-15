@@ -1,0 +1,13 @@
+//
+//  Key.xcconfig
+//  Gatito
+//
+//  Created by José Miguel Lapa on 15/08/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// While this key storage use is not advisable
+// I cannot use Endpoint based key setting / login
+API_KEY = "live_c9K3TY71cLBsLbJatf1tM8FrmL0oRQLE7Qac95mVQIHOXALLR0hxIhxJEQbx1wZ9"
