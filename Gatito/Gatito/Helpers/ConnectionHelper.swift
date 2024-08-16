@@ -6,8 +6,7 @@
 //
 
 import Foundation
-import SystemConfiguration
-import WebKit
+import Network
 
 class ConnectionHelper: ObservableObject {
     
@@ -23,5 +22,7 @@ class ConnectionHelper: ObservableObject {
         monitor.pathUpdateHandler = { [weak self] path in
             self?.isNetworkAccessible = path.status == .satisfied
         }
+        
+        monitor.start(queue: queue)
     }
 }
