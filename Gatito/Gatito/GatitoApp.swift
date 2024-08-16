@@ -16,7 +16,7 @@ struct GatitoApp: App {
     
     let toast = Toast.default(
         image: UIImage(systemName: "exclamationmark.triangle")!,
-        title: "Internet unavailable.",
+        title: "Internet unavailable",
         config: ToastConfiguration(dismissBy: [.tap, .time(time: 10.0)])
     )
     
