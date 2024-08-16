@@ -16,17 +16,18 @@ struct GatitoApp: App {
     
     let toast = Toast.default(
         image: UIImage(systemName: "exclamationmark.triangle")!,
+        imageTint: .systemYellow,
         title: "Internet unavailable",
-        config: ToastConfiguration(dismissBy: [.tap, .time(time: 10.0)])
+        config: ToastConfiguration(dismissBy: [.tap, .swipe(direction: .toTop), .time(time: 10.0)])
     )
-    
+
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
         .onChange(of: connectionHelper.isNetworkAccessible) { _, isNowConnected in
-            if !isNowConnected { toast.show(haptic: .warning) }
+            if !isNowConnected { toast.show(haptic: .error) }
         }
     }
 }
